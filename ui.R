@@ -7,15 +7,15 @@ shinyUI(bootstrapPage(
       tags$script(type="text/javascript", src = "passwdInputBinding.js")
     )
   ),
-  
+
   ## Login module;
   div(class = "login",
       uiOutput("uiLogin"),
       textOutput("pass")
   ), 
   
-  div(class = "span4", uiOutput("obs")),
-  div(class = "span8", plotOutput("distPlot"))
+  div(class = "span4", uiOutput("side")),
+  div(class = "span8", uiOutput("main"))
   
 ))
 

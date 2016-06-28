@@ -8,15 +8,15 @@ shinyServer(function(input, output) {
   
   observe({
     if (USER$Logged == TRUE) {
-      output$obs <- renderUI({
-        sliderInput("obs", "Number of observations:", 
+      output$side <- renderUI({
+        sliderInput("side", "Number of observations:", 
                     min = 10000, max = 90000, 
                     value = 50000, step = 10000)
       })
       
-      output$distPlot <- renderPlot({
+      output$main <- renderPlot({
         dist <- NULL
-        dist <- rnorm(input$obs)
+        dist <- rnorm(input$main)
         hist(dist, breaks = 100, main = paste("Your password:", input$passwd))
       })
     }
